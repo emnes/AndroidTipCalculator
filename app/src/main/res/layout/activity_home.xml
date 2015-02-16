@@ -65,7 +65,8 @@
             android:ems="10"
             android:id="@+id/tipText"
             android:layout_weight="1"
-            android:layout_marginLeft="75dp"/>
+            android:layout_marginLeft="75dp"
+            android:hint="Enter Percentage"/>
     </LinearLayout>
 
     <LinearLayout
@@ -88,7 +89,8 @@
             android:ems="10"
             android:id="@+id/peopleText"
             android:layout_weight="1"
-            android:layout_marginLeft="75dp"/>
+            android:layout_marginLeft="75dp"
+            android:hint="i.e. 2"/>
     </LinearLayout>
 
         <Button

@@ -18,6 +18,10 @@ public class Home extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        // Field hints
+        EditText amountText = (EditText) findViewById(R.id.billText);
+        amountText.setHint("$CAN");
     }
 
 
