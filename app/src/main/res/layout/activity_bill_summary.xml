@@ -8,8 +8,62 @@
 
     <TextView android:text="Bill Summary" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/"
+        android:id="@+id/billSummaryLabel"
+        android:layout_marginTop="46dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:textSize="30dp"
+        android:textColor="#000000" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/billSummaryLabel">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Bill Amount: "
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:id="@+id/billAmountLabel" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tip Amount: "
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:id="@+id/tipAmountLabel" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="Total Amount: "
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:id="@+id/totalAmountLabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tip Per Person: "
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:id="@+id/tipPerPersonLabel" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Each Person Pays: "
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:id="@+id/eachPersonPaysLabel" />
+    </LinearLayout>
 
 </RelativeLayout>
