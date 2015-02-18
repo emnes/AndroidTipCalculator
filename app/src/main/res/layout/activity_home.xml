@@ -7,13 +7,12 @@
     tools:context="com.example.uihomies.androidtipcalculator.HomeActivity">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/logoImage"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:paddingBottom="50dp" />
+        android:src="@drawable/logo" />
 
     <LinearLayout
         android:orientation="vertical"
