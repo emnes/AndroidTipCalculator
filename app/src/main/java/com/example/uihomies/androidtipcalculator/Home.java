@@ -41,7 +41,7 @@ public class Home extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            // Go to settings activity.
+            startActivity(new Intent(Home.this, SettingsActivity.class));
             return true;
         }
 
