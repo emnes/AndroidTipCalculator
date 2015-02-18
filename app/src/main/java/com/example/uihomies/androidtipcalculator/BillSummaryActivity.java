@@ -58,6 +58,7 @@ public class BillSummaryActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // Go to settings activity.
             return true;
         }
 

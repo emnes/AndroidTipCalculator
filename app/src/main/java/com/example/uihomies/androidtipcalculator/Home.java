@@ -41,6 +41,7 @@ public class Home extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // Go to settings activity.
             return true;
         }
 
@@ -52,10 +53,11 @@ public class Home extends ActionBarActivity {
         EditText amountText = (EditText) findViewById(R.id.billText);
         double billAmount = Double.parseDouble(amountText.getText().toString());
 
-        EditText billText = (EditText) findViewById(R.id.tipText);
-        double tipPercentage = Double.parseDouble(billText.getText().toString());
+        EditText tipText = (EditText) findViewById(R.id.tipText);
+        double tipPercentage = Double.parseDouble(tipText.getText().toString());
 
-        double tipAmount = round((billAmount * tipPercentage / 100.0), 2);
+        // Calculate tipAmount (bill * %) and round up to 2 decimal places.
+        double tipAmount = ((new BigDecimal(billAmount * (tipPercentage / 100.0))).setScale(2, RoundingMode.HALF_UP)).doubleValue();
         double totalAmount = billAmount + tipAmount;
 
         // Save values
@@ -65,9 +67,8 @@ public class Home extends ActionBarActivity {
         intent.putExtra("totalAmount", totalAmount);
 
         // Calculate tip per person
-        EditText personText = (EditText) findViewById(R.id.peopleText);
-        double numberOfPeople = Double.parseDouble(personText.getText().toString());
-
+        EditText peopleText = (EditText) findViewById(R.id.peopleText);
+        double numberOfPeople = Double.parseDouble(peopleText.getText().toString());
         double tipPerPerson = tipAmount / numberOfPeople;
         intent.putExtra("tipPerPerson", tipPerPerson);
 
@@ -78,11 +79,11 @@ public class Home extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public static double round(double value, int places) {
+    /*public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
         BigDecimal bd = new BigDecimal(value);
         bd = bd.setScale(places, RoundingMode.HALF_UP);
         return bd.doubleValue();
-    }
+    }*/ // Use method if it is needed multiple times in program.
 }
