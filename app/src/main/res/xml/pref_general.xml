@@ -17,7 +17,7 @@
         android:key="currency_list"
         android:title="Currency"
         android:defaultValue="0"
-        android:entries="@array/pref_currency_titles"
+        android:entries="@array/pref_currency_values"
         android:entryValues="@array/pref_currency_values" />
 
 </PreferenceScreen>

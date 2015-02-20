@@ -7,15 +7,15 @@
     <string name="pref_header_general">General</string>
     <string name="pref_title_default_tip">Default Tip</string>
     <string name="pref_title_currency">Currency</string>
-    <string-array name="pref_currency_titles">
-        <item>CAD</item>
-        <item>USD</item>
-        <item>EUR</item>
+    <string-array name="pref_currency_values">
+        <item>£</item> <!-- Pound sign -->
+        <item>&#36;</item> <!-- Dollar sign -->
+        <item>&#8364;</item> <!-- Euro sign -->
     </string-array>
 
-    <string-array name="pref_currency_values">
+    <!-- <string-array name="pref_currency_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-    </string-array>
+    </string-array> -->
 </resources>

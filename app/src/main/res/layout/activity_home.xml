@@ -12,84 +12,89 @@
         android:id="@+id/logoImage"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        android:contentDescription="logo" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_below="@+id/logoImage"
+        android:weightSum="1"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/logoImage">
+        android:layout_alignParentEnd="true">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:id="@+id/billBox"
+            android:layout_marginBottom="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
-                android:text="Bill"
-                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Bill Total:"
+                android:textSize="20sp"
                 android:textColor="#000000"
                 android:id="@+id/billLabel" />
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
                 android:id="@+id/billText"
-                android:layout_weight="1"
-                android:layout_marginLeft="75dp"/>
+                android:layout_marginLeft="100dp" />
 
         </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp"
+        android:id="@+id/tipBox"
+        android:layout_marginBottom="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:text="Tip"
-            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Tip %:"
+            android:textSize="20sp"
             android:textColor="#000000"
             android:id="@+id/tipLabel" />
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/tipText"
-            android:layout_weight="1"
-            android:layout_marginLeft="75dp"
-            android:hint="Enter Percentage"/>
+            android:layout_marginLeft="130dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp"
+        android:id="@+id/groupSizeBox"
+        android:layout_marginBottom="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:text="# people"
-            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Group Size:"
+            android:textSize="20sp"
             android:textColor="#000000"
             android:id="@+id/peopleLabel" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/peopleText"
-            android:layout_weight="1"
-            android:layout_marginLeft="75dp"
-            android:hint="i.e. 2"/>
+            android:layout_marginLeft="81dp"
+            android:numeric="integer" />
     </LinearLayout>
 
         <Button
@@ -97,8 +102,8 @@
             android:layout_height="wrap_content"
             android:text="Calculate"
             android:id="@+id/calculateButton"
-            android:layout_gravity="center_horizontal"
-            android:onClick="calculateButtonClick"/>
+            android:onClick="calculateButtonClick"
+            android:layout_gravity="center_horizontal" />
 
 
     </LinearLayout>

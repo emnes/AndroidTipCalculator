@@ -1,5 +1,7 @@
 package com.example.uihomies.androidtipcalculator;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,26 +20,32 @@ public class BillSummaryActivity extends ActionBarActivity {
 
         DecimalFormat myFormatter = new DecimalFormat("#.00");
         Bundle extras = getIntent().getExtras();
-        if (extras != null) {
+        if (extras != null)
+        {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            String currency;
+            currency = prefs.getString("currency_list", "$");
             // Bill Amount
-            TextView billAmountText = (TextView) findViewById(R.id.billAmountLabel);
-            billAmountText.setText("Bill Amount: $" + myFormatter.format(extras.getDouble("billAmount")));
+
+            // TODO: Create labels for each of the following values and float to right of summary page.
+            /*(TextView billAmountText = (TextView) findViewById(R.id.billAmount);
+            billAmountText.setText(currency + myFormatter.format(extras.getDouble("billAmount")));
 
             // Tip Amount
-            TextView tipAmountText = (TextView) findViewById(R.id.tipAmountLabel);
-            tipAmountText.setText("Tip Amount: $" + myFormatter.format(extras.getDouble("tipAmount")));
+            TextView tipAmountText = (TextView) findViewById(R.id.tipAmount);
+            tipAmountText.setText(currency + myFormatter.format(extras.getDouble("tipAmount")));
 
             // Total Amount
-            TextView totalAmountText = (TextView) findViewById(R.id.totalAmountLabel);
-            totalAmountText.setText("Total Amount: $" + myFormatter.format(extras.getDouble("totalAmount")));
+            TextView totalAmountText = (TextView) findViewById(R.id.totalAmount);
+            totalAmountText.setText(currency + myFormatter.format(extras.getDouble("totalAmount")));
 
             // Tip per person
-            TextView tipPerPersonText = (TextView) findViewById(R.id.tipPerPersonLabel);
-            tipPerPersonText.setText("Tip Per Person: $" + myFormatter.format(extras.getDouble("tipPerPerson")));
+            TextView tipPerPersonText = (TextView) findViewById(R.id.tipPerPerson);
+            tipPerPersonText.setText(currency + myFormatter.format(extras.getDouble("tipPerPerson")));
 
             // Each person pays
-            TextView eachPersonPaysText = (TextView) findViewById(R.id.eachPersonPaysLabel);
-            eachPersonPaysText.setText("Each Person Pays: $" + myFormatter.format(extras.getDouble("eachPersonPays")));
+            TextView eachPersonPaysText = (TextView) findViewById(R.id.eachPersonPays);
+            eachPersonPaysText.setText(currency + myFormatter.format(extras.getDouble("eachPersonPays")));*/
         }
     }
 

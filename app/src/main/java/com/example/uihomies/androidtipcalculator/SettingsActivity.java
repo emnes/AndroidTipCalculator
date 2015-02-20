@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
+import android.media.audiofx.BassBoost;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
+import android.content.Intent;
 
 
 import java.util.List;
@@ -140,6 +142,7 @@ public class SettingsActivity extends PreferenceActivity {
             else {
                 // For all other preferences, set the summary to the value's
                 // simple string representation.
+
                 preference.setSummary(stringValue);
             }
             return true;
