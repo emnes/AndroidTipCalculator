@@ -27,8 +27,7 @@ public class BillSummaryActivity extends ActionBarActivity {
             currency = prefs.getString("currency_list", "$");
             // Bill Amount
 
-            // TODO: Create labels for each of the following values and float to right of summary page.
-            /*(TextView billAmountText = (TextView) findViewById(R.id.billAmount);
+            TextView billAmountText = (TextView) findViewById(R.id.billAmount);
             billAmountText.setText(currency + myFormatter.format(extras.getDouble("billAmount")));
 
             // Tip Amount
@@ -45,7 +44,7 @@ public class BillSummaryActivity extends ActionBarActivity {
 
             // Each person pays
             TextView eachPersonPaysText = (TextView) findViewById(R.id.eachPersonPays);
-            eachPersonPaysText.setText(currency + myFormatter.format(extras.getDouble("eachPersonPays")));*/
+            eachPersonPaysText.setText(currency + myFormatter.format(extras.getDouble("eachPersonPays")));
         }
     }
 

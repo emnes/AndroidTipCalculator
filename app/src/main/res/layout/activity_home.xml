@@ -4,6 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/background"
     tools:context="com.example.uihomies.androidtipcalculator.HomeActivity">
 
     <ImageView
@@ -12,7 +13,7 @@
         android:id="@+id/logoImage"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo"
+        android:src="@drawable/ic_launcher"
         android:contentDescription="logo" />
 
     <LinearLayout
@@ -37,12 +38,14 @@
                 android:layout_marginBottom="10dp"
                 android:text="Bill Total:"
                 android:textSize="20sp"
-                android:textColor="#000000"
+                android:textColor="@color/text"
                 android:id="@+id/billLabel" />
             <EditText
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
+                android:textColor="@color/text"
+                android:textColorHint="@color/text"
                 android:ems="10"
                 android:id="@+id/billText"
                 android:layout_marginLeft="100dp" />
@@ -61,12 +64,13 @@
             android:layout_marginBottom="10dp"
             android:text="Tip %:"
             android:textSize="20sp"
-            android:textColor="#000000"
+            android:textColor="@color/text"
             android:id="@+id/tipLabel" />
         <EditText
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:textColor="@color/text"
             android:ems="10"
             android:id="@+id/tipText"
             android:layout_marginLeft="130dp"/>
@@ -84,13 +88,14 @@
             android:layout_marginBottom="10dp"
             android:text="Group Size:"
             android:textSize="20sp"
-            android:textColor="#000000"
+            android:textColor="@color/text"
             android:id="@+id/peopleLabel" />
 
         <EditText
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:textColor="@color/text"
             android:ems="10"
             android:id="@+id/peopleText"
             android:layout_marginLeft="81dp"
@@ -98,6 +103,8 @@
     </LinearLayout>
 
         <Button
+            android:background="@drawable/button_layout"
+            android:textColor="@color/background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Calculate"

@@ -63,17 +63,31 @@ public class Home extends ActionBarActivity {
 
     public void calculateButtonClick(View view) {
         EditText billAmountTextField = (EditText) findViewById(R.id.billText);
-        //String billAmountText = billAmountTextField.getText().toString();
+        String billAmountText = billAmountTextField.getText().toString();
 
         EditText tipTextField = (EditText) findViewById(R.id.tipText);
-        //String tipText = tipTextField.getText().toString();
+        String tipText = tipTextField.getText().toString();
 
         EditText peopleTextField = (EditText) findViewById(R.id.peopleText);
-        //String peopleText = peopleTextField.getText().toString();
+        String peopleText = peopleTextField.getText().toString();
 
         // TODO: Error handling. Alert views should pop up when user enters no values or invalid values.
+        boolean valid = true;
+        if(billAmountText.length()==0){
+            billAmountTextField.setError("Must enter a bill amount!");
+            valid = false;
+        }
+        if(tipText.length()==0){
+            tipTextField.setError("Must enter a tip amount!");
+            valid = false;
+        }
+        if(peopleText.length()==0){
+            peopleTextField.setError("Must enter number of people!");
+            valid = false;
+        }
+
         // TODO: Suggest a tip.
-        if(billAmountTextField.getText().toString() != null && tipTextField.getText().toString() != null && peopleTextField.getText().toString() != null) {
+        if(valid) {
             // Grab valid values
             double billAmount = Double.parseDouble(billAmountTextField.getText().toString());
             double tipPercentage = Double.parseDouble(tipTextField.getText().toString());
@@ -97,6 +111,9 @@ public class Home extends ActionBarActivity {
                 intent.putExtra("eachPersonPays", eachPersonPays);
 
                 startActivity(intent);
+            }
+            else{
+                peopleTextField.setError("People can't be zero");
             }
             // Number of people should be bigger than one alert
         }
