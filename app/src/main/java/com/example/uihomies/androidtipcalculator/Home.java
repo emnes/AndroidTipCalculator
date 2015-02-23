@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import android.preference.PreferenceManager;
 import android.widget.RatingBar;
+import android.widget.TextView;
 
 
 public class Home extends ActionBarActivity {
@@ -33,8 +34,10 @@ public class Home extends ActionBarActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         String currency = prefs.getString("currency_list","$");
-        EditText amountText = (EditText) findViewById(R.id.billText);
-        amountText.setHint(currency);
+        //EditText amountText = (EditText) findViewById(R.id.billText);
+        //amountText.setHint(currency);
+        TextView billCurrency = (TextView) findViewById(R.id.billCurrency);
+        billCurrency.setText(currency);
 
         String tipAmount = prefs.getString("default_tip",null);
         EditText tipText = (EditText) findViewById(R.id.tipText);
