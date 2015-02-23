@@ -139,7 +139,38 @@ public class Home extends ActionBarActivity {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.suggestion_dialog);
 
-        dialog.setTitle("Rate your service");
+
+        //addListenerOnRatingBar();
+
+        /*final RatingBar rbar = (RatingBar) dialog.findViewById(R.id.suggestion_bar);
+        rbar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                // change text
+                //float floatStars = rbar.getRating();
+                int numstars = Math.round(rating);
+                TextView tip = (TextView) findViewById(R.id.starTip);
+                tip.setText("Tip % = " + numstars);
+            }
+        });*/
+        RatingBar ratingBar = (RatingBar) dialog.findViewById(R.id.suggestion_bar);
+        //TextView txtRatingValue = (TextView) findViewById(R.id.starTip);
+
+        //if rating value is changed,
+        //display the current rating value in the result (textview) automatically
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+
+                int stars = Math.round(rating);
+                int tipPercent = 10 + (stars * 2);
+                TextView txtRatingValue = (TextView) dialog.findViewById(R.id.starTip);
+                txtRatingValue.setText("Tip = " + tipPercent + "%");
+
+            }
+        });
+
+        dialog.setTitle("Rate Your Service");
         Button cancelButton = (Button) dialog.findViewById(R.id.suggestion_cancel);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,6 +198,7 @@ public class Home extends ActionBarActivity {
 
         dialog.show();
     }
+
 
     /*public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
