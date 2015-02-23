@@ -5,4 +5,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="PreferencesTheme" parent="ThemeOverlay.AppCompat.Dark">
+
+        <!--<item name="android:background">#3498db</item>
+        <item name="android:textColor">#FFFFFF</item>-->
+    </style>
+
 </resources>
