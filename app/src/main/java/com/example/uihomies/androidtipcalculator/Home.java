@@ -80,6 +80,10 @@ public class Home extends ActionBarActivity {
             billAmountTextField.setError("Must enter a bill amount!");
             valid = false;
         }
+        if(!billAmountText.matches("[0-9]+([,.][0-9]{1,2})?")){
+            billAmountTextField.setError("Exceeds numbers of decimals!");
+            valid = false;
+        }
         if(tipText.length()==0){
             tipTextField.setError("Must enter a tip amount!");
             valid = false;
@@ -89,6 +93,7 @@ public class Home extends ActionBarActivity {
             valid = false;
         }
 
+
         // TODO: Suggest a tip.
         if(valid) {
             // Grab valid values
@@ -96,27 +101,30 @@ public class Home extends ActionBarActivity {
             double tipPercentage = Double.parseDouble(tipTextField.getText().toString());
             double numberOfPeople = Double.parseDouble(peopleTextField.getText().toString());
             // Number of people should be more than one.
-            if(numberOfPeople > 0) {// Calculate tipAmount (bill * %) and round up to 2 decimal places.
-                double tipAmount = ((new BigDecimal(billAmount * (tipPercentage / 100.0))).setScale(2, RoundingMode.HALF_UP)).doubleValue();
-                double totalAmount = billAmount + tipAmount;
+            if (billAmount > 0){if(numberOfPeople > 0) {// Calculate tipAmount (bill * %) and round up to 2 decimal places.
+                    double tipAmount = ((new BigDecimal(billAmount * (tipPercentage / 100.0))).setScale(2, RoundingMode.HALF_UP)).doubleValue();
+                    double totalAmount = billAmount + tipAmount;
 
-                // Calculate tip per person
-                double tipPerPerson = tipAmount / numberOfPeople;
-                // Calculate how much each person needs to pay
-                double eachPersonPays = totalAmount / numberOfPeople;
+                    // Calculate tip per person
+                    double tipPerPerson = tipAmount / numberOfPeople;
+                    // Calculate how much each person needs to pay
+                    double eachPersonPays = totalAmount / numberOfPeople;
 
-                // Save values
-                Intent intent = new Intent(Home.this, BillSummaryActivity.class);
-                intent.putExtra("billAmount", billAmount);
-                intent.putExtra("tipAmount", tipAmount);
-                intent.putExtra("totalAmount", totalAmount);
-                intent.putExtra("tipPerPerson", tipPerPerson);
-                intent.putExtra("eachPersonPays", eachPersonPays);
+                    // Save values
+                    Intent intent = new Intent(Home.this, BillSummaryActivity.class);
+                    intent.putExtra("billAmount", billAmount);
+                    intent.putExtra("tipAmount", tipAmount);
+                    intent.putExtra("totalAmount", totalAmount);
+                    intent.putExtra("tipPerPerson", tipPerPerson);
+                    intent.putExtra("eachPersonPays", eachPersonPays);
 
-                startActivity(intent);
-            }
+                    startActivity(intent);
+                }
+                else{
+                    peopleTextField.setError("People can't be zero");
+                }}
             else{
-                peopleTextField.setError("People can't be zero");
+                billAmountTextField.setError("Bill can't be zero");
             }
             // Number of people should be bigger than one alert
         }
