@@ -1,5 +1,6 @@
 package com.example.uihomies.androidtipcalculator;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
@@ -7,11 +8,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import android.preference.PreferenceManager;
+import android.widget.RatingBar;
 
 
 public class Home extends ActionBarActivity {
@@ -118,6 +121,40 @@ public class Home extends ActionBarActivity {
             // Number of people should be bigger than one alert
         }
         //Please enter amount for each field alert.
+    }
+
+    public void clickSuggestion(View view){
+        // custom dialog
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.suggestion_dialog);
+
+        dialog.setTitle("Rate your service");
+        Button cancelButton = (Button) dialog.findViewById(R.id.suggestion_cancel);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        Button okButton = (Button) dialog.findViewById(R.id.suggestion_ok);
+        okButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                // tip percentage = 10 + (rating *2)
+                RatingBar bar = (RatingBar) dialog.findViewById(R.id.suggestion_bar);
+                float starsF = bar.getRating();
+                int stars = Math.round(starsF);
+                int tipPercent = 10 + (stars * 2);
+                EditText tip = (EditText) findViewById(R.id.tipText);
+                String tipSuggestion = Integer.toString(tipPercent);
+                tip.setText(tipSuggestion);
+                dialog.dismiss();
+            }
+        });
+
+
+
+        dialog.show();
     }
 
     /*public static double round(double value, int places) {

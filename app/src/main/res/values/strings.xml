@@ -6,9 +6,15 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_bill_summary">BillSummaryActivity</string>
 
-    <color name="background">#84c323</color>
+    <!--<color name="background">#84c323</color>
+        <color name="text">#FFFFFF</color>
+        <color name="button_text">#84c323</color>
+        <color name="button_background">#FFFFFF</color>
+    -->
+
+    <color name="background">#3498db</color>
     <color name="text">#FFFFFF</color>
-    <color name="button_text">#84c323</color>
-    <color name="button_background">#FFFFFF</color>>
+    <color name="button_text">#3498db</color>
+    <color name="button_background">#FFFFFF</color>
 
 </resources>

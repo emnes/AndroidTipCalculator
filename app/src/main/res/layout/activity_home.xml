@@ -1,10 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/background"
+    android:orientation="vertical"
     tools:context="com.example.uihomies.androidtipcalculator.HomeActivity">
 
     <ImageView
@@ -13,27 +14,20 @@
         android:id="@+id/logoImage"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/logo"
         android:contentDescription="logo" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@+id/logoImage"
-        android:weightSum="1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+
 
         <LinearLayout
+            android:layout_gravity="center_horizontal"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:weightSum="1"
             android:id="@+id/billBox"
             android:layout_marginBottom="10dp">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="Bill Total:"
@@ -41,49 +35,61 @@
                 android:textColor="@color/text"
                 android:id="@+id/billLabel" />
             <EditText
-                android:layout_width="130dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:textColor="@color/text"
                 android:textColorHint="@color/text"
                 android:ems="10"
-                android:id="@+id/billText"
-                android:layout_marginLeft="100dp" />
+                android:id="@+id/billText" />
 
         </LinearLayout>
 
     <LinearLayout
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/tipBox"
         android:layout_marginBottom="10dp">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:text="Tip %:"
             android:textSize="20sp"
             android:textColor="@color/text"
             android:id="@+id/tipLabel" />
+
+
         <EditText
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:inputType="number"
             android:textColor="@color/text"
             android:ems="10"
             android:id="@+id/tipText"
-            android:layout_marginLeft="130dp"/>
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/lightbulb"
+            android:onClick="clickSuggestion"
+            />
+
     </LinearLayout>
 
     <LinearLayout
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/groupSizeBox"
         android:layout_marginBottom="10dp">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="Group Size:"
@@ -92,13 +98,12 @@
             android:id="@+id/peopleLabel" />
 
         <EditText
-            android:layout_width="130dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:textColor="@color/text"
             android:ems="10"
             android:id="@+id/peopleText"
-            android:layout_marginLeft="81dp"
             android:numeric="integer" />
     </LinearLayout>
 
@@ -113,6 +118,5 @@
             android:layout_gravity="center_horizontal" />
 
 
-    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
