@@ -1,5 +1,6 @@
 package com.example.uihomies.androidtipcalculator;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
@@ -65,7 +66,7 @@ public class BillSummaryActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            // Go to settings activity.
+            startActivity(new Intent(BillSummaryActivity.this, SettingsActivity.class));
             return true;
         }
 
