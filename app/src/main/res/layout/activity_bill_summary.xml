@@ -7,7 +7,8 @@
     android:background="@color/background"
     tools:context="com.example.uihomies.androidtipcalculator.BillSummaryActivity">
 
-    <TextView android:text="Bill Summary" android:layout_width="wrap_content"
+    <TextView android:text="Bill Summary"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/billSummaryLabel"
         android:layout_marginTop="46dp"
@@ -18,18 +19,20 @@
         android:textColor="@color/text" />
 
     <LinearLayout
+        android:layout_centerHorizontal="true"
         android:orientation="horizontal"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/billSummaryLabel">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:layout_height="wrap_content">
 
             <TextView
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -38,6 +41,7 @@
                 android:textColor="@color/text"
                 android:id="@+id/billAmountLabel" />
             <TextView
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -46,6 +50,7 @@
                 android:textColor="@color/text"
                 android:id="@+id/tipAmountLabel" />
             <TextView
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
@@ -55,6 +60,7 @@
                 android:id="@+id/totalAmountLabel" />
 
             <TextView
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -63,6 +69,7 @@
                 android:textColor="@color/text"
                 android:id="@+id/tipPerPersonLabel" />
             <TextView
+                android:layout_gravity="left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -75,10 +82,12 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="wrap_content">
 
             <TextView
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -86,6 +95,8 @@
                 android:textColor="@color/text"
                 android:id="@+id/billAmount" />
             <TextView
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -93,6 +104,8 @@
                 android:textColor="@color/text"
                 android:id="@+id/tipAmount" />
             <TextView
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
@@ -101,6 +114,8 @@
                 android:id="@+id/totalAmount" />
 
             <TextView
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -108,6 +123,8 @@
                 android:textColor="@color/text"
                 android:id="@+id/tipPerPerson" />
             <TextView
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
