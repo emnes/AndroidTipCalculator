@@ -49,6 +49,38 @@ public class BillSummaryActivity extends ActionBarActivity {
         }
     }
 
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_bill_summary);
+
+        DecimalFormat myFormatter = new DecimalFormat("#.00");
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            String currency;
+            currency = prefs.getString("currency_list", "$");
+            // Bill Amount
+
+            TextView billAmountText = (TextView) findViewById(R.id.billAmount);
+            billAmountText.setText(currency + myFormatter.format(extras.getDouble("billAmount")));
+
+            // Tip Amount
+            TextView tipAmountText = (TextView) findViewById(R.id.tipAmount);
+            tipAmountText.setText(currency + myFormatter.format(extras.getDouble("tipAmount")));
+
+            // Total Amount
+            TextView totalAmountText = (TextView) findViewById(R.id.totalAmount);
+            totalAmountText.setText(currency + myFormatter.format(extras.getDouble("totalAmount")));
+
+            // Tip per person
+            TextView tipPerPersonText = (TextView) findViewById(R.id.tipPerPerson);
+            tipPerPersonText.setText(currency + myFormatter.format(extras.getDouble("tipPerPerson")));
+
+            // Each person pays
+            TextView eachPersonPaysText = (TextView) findViewById(R.id.eachPersonPays);
+            eachPersonPaysText.setText(currency + myFormatter.format(extras.getDouble("eachPersonPays")));
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
